@@ -6,7 +6,7 @@ option go_package = "./pb";
 
 message ListFilesRequest {};
 
-message ListFilesResponse { repeated string filename = 1; };
+message ListFilesResponse { repeated string filenames = 1; };
 
 service FileService {
   rpc ListFiles(ListFilesRequest) returns (ListFilesResponse);
