@@ -12,7 +12,12 @@ message DownloadRequest { string filename = 1; }
 
 message DownloadResponse { bytes data = 1; }
 
+message UploadRequest { bytes data = 1; }
+
+message UploadResponse { int32 size = 1; }
+
 service FileService {
   rpc ListFiles(ListFilesRequest) returns (ListFilesResponse);
   rpc Download(DownloadRequest) returns (stream DownloadResponse);
+  rpc Upload(stream UploadRequest) returns (UploadResponse);
 }
